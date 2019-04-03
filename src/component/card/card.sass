@@ -1,0 +1,54 @@
+@import '../../assets/sass/variable'
+@mixin rowMachine($numPerRow, $margin)
+  width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow)
+  &:nth-child(n) 
+    margin-bottom: $margin
+    margin-right: $margin
+
+  &:nth-child(#{$numPerRow}n) 
+    margin-right: 0
+    margin-bottom: 0
+
+.card
+    @include rowMachine(3, 3%)
+    border: none
+
+    .image-placeholder
+        width: 100%
+        height: 300px
+        text-align: center
+        line-height: 300px
+        
+        img
+            width: 100%
+            background-position: cover
+            vertical-align: middle
+
+
+.banner-hover
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    height: 100%
+    width: 100%
+    opacity: 0
+    transition: .5s ease
+    background-color: $primaryColor
+    border-radius: 5px
+    max-height: 300px
+
+.card:hover .banner-hover
+    opacity: 1
+
+.card-content
+    padding: 5%
+    text-align: center
+    color: black
+    font-family: 'Roboto', sans-serif
+    line-height: 1.5
+
+    h3
+        font-weight: 700
+        margin: 8% 0
