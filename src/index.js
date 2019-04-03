@@ -9,8 +9,7 @@ import NavBar from './component/Navbar/Navbar'
 ReactDOM.render(
   <Router>
       <div>
-        <NavBar />
-        <Route exact path='/' component={LandingPage} />
+        <Route exact path='/' render={LandingPage} />
       </div>
   </Router>,
   document.getElementById('root')
